@@ -5,6 +5,21 @@
   padding: 12px;
 }
 
+.navigation {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.navigation li {
+  margin: 0 5px;
+}
+
 a {
   color: #ffffff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
