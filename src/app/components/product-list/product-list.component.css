@@ -2,11 +2,21 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 1024px;
-  margin-bottom: 64px;
 }
 
 .product-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  padding: 0 15px;
+  width: 40%;
+  max-width: 300px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+a {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
