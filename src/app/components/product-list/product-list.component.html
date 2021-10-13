@@ -1,20 +1,4 @@
 <h1>Products</h1>
-
 <div class="product-index">
-  <div class="product-container" *ngFor="let product of productList">
-
-    <a routerLink="/product-detail/{{product.id}}" routerLinkActive="active">
-      <img src="{{product.url}}" alt="">
-    </a>
-
-    <a routerLink="/product-detail/{{product.id}}" routerLinkActive="active">
-      <h3>{{product.name}}</h3> <br>
-    </a>
-
-    <b>€ {{product.price}}</b>
-
-    <input type="number" min="1" value="1">
-
-    <button>Add to cart</button>
-  </div>
+    <app-product-item *ngFor="let product of productList" [product]="product"></app-product-item>
 </div>

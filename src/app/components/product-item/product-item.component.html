@@ -1,1 +1,16 @@
-<p>product-item works!</p>
+<div class="product-container">
+
+  <a routerLink="/product-detail/{{product.id}}" routerLinkActive="active">
+    <img class="product-image" src="{{product.url}}" alt="">
+  </a>
+
+  <a routerLink="/product-detail/{{product.id}}" routerLinkActive="active">
+    <h3>{{product.name}}</h3> <br>
+  </a>
+
+  <b>€ {{product.price}}</b>
+
+  <input class="select-input" type="number" min="1" value="1">
+
+  <button>Add to cart</button>
+</div>
