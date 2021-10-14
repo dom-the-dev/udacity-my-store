@@ -1,5 +1,19 @@
-<p>product-item-detail works! >>{{id}}<<</p>
+<div class="detail-container" *ngIf="product;">
+  <img src="{{product.url}}" alt="" class="product-image">
+  <div class="detail-item">
+    <div *ngIf="product.name;">
+      <h1>{{product.name}}</h1>
+      <p>{{product.description}}</p>
+      <p>{{product.price}}</p>
 
-<div *ngIf="product;">
-  <h1>{{product.name}}</h1>
+
+      <app-add-to-cart-select></app-add-to-cart-select>
+
+      <div>
+        <a routerLink="/" routerLinkActive="active">
+          Back to product list
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
