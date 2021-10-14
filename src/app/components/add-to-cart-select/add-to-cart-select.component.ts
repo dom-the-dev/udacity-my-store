@@ -18,6 +18,7 @@ export class AddToCartSelectComponent implements OnInit {
   }
 
   addToCart(product: Product) {
+    // Todo: check if product already in cart -> add amount to existing
     this.cartService.addToCart(product, this.selectedAmount)
     alert(`You added: ${product.name} ${this.selectedAmount} time/s`)
   }

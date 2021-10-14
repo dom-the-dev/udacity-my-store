@@ -10,7 +10,9 @@
         <div class="cart-item-details">
           <h5>{{product.name}}</h5>
           {{product.price}}
+
           {{product.amount}}
+          <input type="number" [value]="product.amount" ngModel (ngModelChange)="changeAmount()">
         </div>
       </div>
     </div>
