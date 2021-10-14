@@ -19,19 +19,21 @@ export class CartService {
   }
 
   addToCart(product, amount) {
-    let numberOfProducts = parseInt(amount)
-    let index = this.cart.products.findIndex((prod) => prod.id === product.id)
+    const numberOfProducts = parseInt(amount)
+    const index = this.cart.products.findIndex((prod) => prod.id === product.id)
+    const totalProductPrice = product.price * numberOfProducts
 
     if (index >= 0) {
-      this.cart.products[index].price += product.price * numberOfProducts
+      this.cart.products[index].price += totalProductPrice
       this.cart.products[index].amount += numberOfProducts
       this.cart.total += product.price
     } else {
+
       let cartProduct = {
         id: product.id,
         name: product.name,
         url: product.url,
-        price: product.price * numberOfProducts,
+        price: totalProductPrice,
         amount: numberOfProducts
       }
 
@@ -41,7 +43,7 @@ export class CartService {
 
   }
 
-  removeFromCart() {
+  changeAmount() {
 
   }
 
