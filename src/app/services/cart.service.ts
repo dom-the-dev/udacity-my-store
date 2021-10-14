@@ -23,6 +23,7 @@ export class CartService {
     const index = this.cart.products.findIndex((prod) => prod.id === product.id)
     const totalProductPrice = product.price * numberOfProducts
 
+    // Check if product exists and then update amount and price
     if (index >= 0) {
       this.cart.products[index].price += totalProductPrice
       this.cart.products[index].amount += numberOfProducts
