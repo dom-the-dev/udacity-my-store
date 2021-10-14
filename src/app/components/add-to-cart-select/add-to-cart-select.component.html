@@ -1,18 +1,18 @@
 <form>
-  <select class="select-input" name="amount" id="product">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
+  <select class="select-input" name="amount" id="product" [(ngModel)]="selectedAmount">
+    <option [value]="1">1</option>
+    <option [value]="2">2</option>
+    <option [value]="3">3</option>
+    <option [value]="4">4</option>
+    <option [value]="5">5</option>
+    <option [value]="6">6</option>
+    <option [value]="7">7</option>
+    <option [value]="8">8</option>
+    <option [value]="9">9</option>
+    <option [value]="10">10</option>
   </select>
 
   <br>
 
-  <button (click)="addToCart(product, 4); $event.preventDefault()" class="btn btn-primary">Add to cart</button>
+  <button (click)="addToCart(product); $event.preventDefault()" class="btn btn-primary">Add to cart</button>
 </form>

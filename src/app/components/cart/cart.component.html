@@ -1,17 +1,38 @@
 <h1>Cart</h1>
 
-<div class="cart-container">
-  <div *ngIf="cartProducts.length === 0; else elseBlock">No products in cart</div>
-  <ng-template #elseBlock>
+<div class="empty-cart-message" *ngIf="cart.products.length === 0; else elseBlock">no items in cart</div>
+
+<ng-template #elseBlock>
+  <div class="cart">
+    <div class="cart-items">
+      <div class="cart-item" *ngFor="let product of cart.products">
+        <img src="{{product.url}}" alt="">
+        <div class="cart-item-details">
+          <h5>{{product.name}}</h5>
+          {{product.price}}
+          {{product.amount}}
+        </div>
+      </div>
+    </div>
+
     <form class="form form-margin">
-      <label for="name">Full name:</label>
-      <input type="text" id="name"> <br>
+      <div class="form-input">
+        <label for="name">Full name:</label> <br>
+        <input type="text" id="name"> <br>
+      </div>
 
-      <label for="address">Address:</label>
-      <input type="text" id="address"> <br>
+      <div class="form-input">
+        <label for="address">Address:</label> <br>
+        <input type="text" id="address"> <br>
+      </div>
 
-      <label for="credit-cart">Credit cart number:</label>
-      <input type="text" id="credit-cart">
+      <div class="form-input">
+        <label for="credit-cart">Credit cart number:</label> <br>
+        <input type="text" id="credit-cart">
+      </div>
     </form>
-  </ng-template>
-</div>
+
+  </div>
+  <h1 class="text-center">{{cart.total}}</h1>
+</ng-template>
+

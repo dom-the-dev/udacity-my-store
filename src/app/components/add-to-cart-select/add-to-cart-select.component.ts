@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, NgModule} from '@angular/core';
 import {Product} from "../../models/Product";
 import {CartService} from "../../services/cart.service";
 
@@ -10,13 +10,15 @@ import {CartService} from "../../services/cart.service";
 export class AddToCartSelectComponent implements OnInit {
   @Input() product;
 
+  selectedAmount: number = 1;
+
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
   }
 
-  addToCart(product: Product, amount: number) {
-    this.cartService.addToCart(product, amount)
-    alert(`products added: ${amount}`)
+  addToCart(product: Product) {
+    this.cartService.addToCart(product, this.selectedAmount)
+    alert(`You added: ${product.name} ${this.selectedAmount} time/s`)
   }
 }
