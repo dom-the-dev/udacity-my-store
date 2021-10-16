@@ -1,5 +1,11 @@
 # UdacityMyStore
 
+## Getting started
+1. clone this repository `git clone git@github.com:dom-the-dev/udacity-my-store.git`
+2. cd into project directory `cd my-store`
+3. run `npm install` to install all dependencies
+4. run `ng serve` to start development server
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.9.
 
 ## Development server
