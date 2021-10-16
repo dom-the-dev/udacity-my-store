@@ -1,0 +1,27 @@
+
+<form class="form form-margin" (ngSubmit)="submit(fullName, address, creditCard)">
+
+  <div class="form-group">
+    <label for="name">Full Name</label>
+    <input required type="email" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Full Name" ngModel name="fullName" #fullName="ngModel" minlength="3">
+    <small id="nameHelp" class="form-text text-muted">minimum 3-characters</small>
+    <div class="alert alert-danger" *ngIf="fullName.touched && !fullName.valid">Minimum 3 characters</div>
+  </div>
+
+  <div class="form-group">
+    <label for="address">Address</label>
+    <input required type="text" class="form-control" id="address" aria-describedby="addressHelp" placeholder="Address" ngModel name="address" #address="ngModel"  minlength="6">
+    <small id="addressHelp" class="form-text text-muted">minimum 6-characters</small>
+    <div class="alert alert-danger" *ngIf="address.touched && !address.valid">Minimum 6 characters</div>
+  </div>
+
+  <div class="form-group">
+    <label for="credit-card">Credit Card</label>
+    <input required type="text" class="form-control" id="credit-card" aria-describedby="emailHelp" placeholder="Credit Card" ngModel name="creditCard" #creditCard="ngModel" minlength="18">
+    <small id="creditCardHelp" class="form-text text-muted">18-digit-number</small>
+    <div class="alert alert-danger" *ngIf="creditCard.touched && !creditCard.valid">Minimum 18 digits</div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Place Order</button>
+
+</form>

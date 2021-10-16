@@ -13,6 +13,7 @@ import { HeaderComponent } from './layout/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from "@angular/forms";
+import { PaymentFormComponent } from './components/payment-form/payment-form.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule } from "@angular/forms";
     ProductItemDetailComponent,
     ProductListComponent,
     HeaderComponent,
-    AddToCartSelectComponent
+    AddToCartSelectComponent,
+    PaymentFormComponent
   ],
   imports: [
     BrowserModule,
