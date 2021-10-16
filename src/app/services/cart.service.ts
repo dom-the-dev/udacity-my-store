@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Cart} from "../models/Cart";
+import {Order} from "../models/Order";
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,11 @@ export class CartService {
     products: [],
     total: 0,
   };
+
+  order: Order = {
+    fullName: '',
+    total: 0
+  }
 
   constructor() {
   }
@@ -56,6 +62,18 @@ export class CartService {
     this.cart.products.forEach(product => this.cart.total += product.total)
 
     return this.cart;
+  }
+
+  createOrder(fullName) {
+    this.order = {
+      fullName,
+      total: this.cart.total
+    }
+  }
+
+  getOrder(): Order {
+    console.log('ORDER', this.order)
+    return this.order
   }
 
 }
