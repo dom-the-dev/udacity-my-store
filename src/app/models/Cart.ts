@@ -1,9 +1,10 @@
 export class CartProduct {
   id: number;
   name: string;
-  url: string;
   price: number;
+  url: string;
   amount: number;
+  total: number;
 
   constructor() {
     this.id = 0;
@@ -11,6 +12,7 @@ export class CartProduct {
     this.url  = '';
     this.price = 0;
     this.amount = 0;
+    this.total = 0;
   }
 }
 
