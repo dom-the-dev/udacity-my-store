@@ -11,6 +11,8 @@
           <h5>{{product.name}}</h5>
           € {{(product.total).toFixed(2)}}
 
+          <button class="btn btn-secondary" (click)="removeProduct(product.id)">Remove</button>
+
           <div class="form-group">
             <label for="cart-{{product.name}}">Amount</label>
             <input type="number" class="form-control" min="1" id="cart-{{product.name}}" [(ngModel)]="product.amount" ngModel (ngModelChange)="changeAmount(product.id, $event)">

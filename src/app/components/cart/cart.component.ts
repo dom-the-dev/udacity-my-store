@@ -34,4 +34,8 @@ export class CartComponent implements OnInit {
       alert('Check input fields for errors');
     }
   }
+
+  removeProduct(productId: number): void {
+    this.cartService.removeProduct(productId)
+  }
 }

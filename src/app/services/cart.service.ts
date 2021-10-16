@@ -45,9 +45,15 @@ export class CartService {
       this.cart.products.push(cartProduct)
     }
 
-    this.cart.total = 0;
-    this.cart.products.forEach(product => this.cart.total += product.total)
+    this.updateCartTotal()
 
+  }
+
+  removeProduct(productId: number) {
+    const index = this.cart.products.findIndex(prod => prod.id === productId)
+    this.cart.products.splice(index, 1);
+
+    this.updateCartTotal()
   }
 
   updateCart(productId: number, amount: number): Cart {
@@ -58,10 +64,14 @@ export class CartService {
       this.cart.products[productIndex].amount = amount
     }
 
-    this.cart.total = 0;
-    this.cart.products.forEach(product => this.cart.total += product.total)
+    this.updateCartTotal()
 
     return this.cart;
+  }
+
+  updateCartTotal(): void {
+    this.cart.total = 0;
+    this.cart.products.forEach(product => this.cart.total += product.total)
   }
 
   createOrder(fullName) {
@@ -72,7 +82,6 @@ export class CartService {
   }
 
   getOrder(): Order {
-    console.log('ORDER', this.order)
     return this.order
   }
 
