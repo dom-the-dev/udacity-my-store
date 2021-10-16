@@ -1,5 +1,12 @@
 # UdacityMyStore
-Third project of udacity fullstack javascript developer Nanodegree. Build a storefront with Angular.
+Third project of udacity fullstack javascript developer Nanodegree. 
+Build a storefront with Angular.
+
+This application builds the frontend of a e-commerce store. 
+It fetches data via http get request from a file. Displays the data as a list of products on the homepage. The user can add products directly to the cart oder from the product detail page.
+On the cart page users can provide payment credentials via a form. On submit the inputs will be validated and the user is redirected to a order confirmation page.
+
+
 
 ## Getting started
 1. clone this repository `git clone git@github.com:dom-the-dev/udacity-my-store.git`
